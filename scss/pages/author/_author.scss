@@ -1,0 +1,52 @@
+body.author .author-info {
+    padding-top: 4rem;
+    width: 90%;
+    margin: 0 auto;
+    color: $article-black;
+
+    h1 {
+        @include h1(1.5rem);
+    }
+    .center-container, .author-details {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .avatar {
+        max-width: 480px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+    .author-details {
+        gap: 15px;
+
+        p {
+            font-size: 18px;
+            font-style: italic;
+        }
+    }
+    .biography {
+        p {
+            line-height: 1.75;
+        }
+    }
+    @include tablet {
+        padding-top: 6rem;
+    }
+    @include blog {
+        max-width: 700px;
+    }
+    @include laptop {
+        .biography p {
+            font-size: 18px;
+        }
+    }
+}
+body.author .articles-section {
+    padding-top: 6rem;
+
+    .title-container {
+        padding-top: 6rem;
+        border-top: $light-bg-border;
+    }
+}

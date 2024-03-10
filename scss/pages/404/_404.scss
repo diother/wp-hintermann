@@ -1,0 +1,38 @@
+body.error404 .title-container {
+    padding: 4rem 0;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    h1 {
+        @include h1(7.6vw);
+    }
+    button {
+        width: 100%;
+    }
+    @include tablet {
+        align-items: center;
+        padding: 6rem 0;
+        width: 85%;
+        gap: 3rem;
+
+        h1 {
+            text-align: center;
+            @include h1(7vw);
+        }
+    }
+    @include laptop {
+        h1 {
+            @include h1(4vw);
+        }
+    }
+    @include desktop {
+        max-width: 1280px;
+
+        h1 {
+            @include h1(3.5rem);
+        }
+    }
+}

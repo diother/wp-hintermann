@@ -1,0 +1,54 @@
+body.category > main {
+    padding-top: 4rem;
+    width: 90%;
+    margin: 0 auto;
+
+    h1 {
+        @include h1(7.6vw);
+    }
+    .category-posts {
+        padding-top: 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .pagination {
+        padding-top: 2rem;
+        display: flex;
+        gap: 2rem;
+    }
+    @include tablet {
+        width: 85%;
+        padding-top: 6rem;
+
+        h1 {
+            text-align: center;
+            @include h1(5vw);
+        }
+        .category-posts {
+            padding-top: 6rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .pagination {
+            padding-top: 4rem;
+        }
+    }
+    @include laptop {
+        h1 {
+            @include h1(4vw);
+        }
+    }
+    @include breakpoint(1065px) {
+        .category-posts {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @include desktop {
+        max-width: 1280px;
+
+        h1 {
+            @include h1(3.5rem);
+        }
+    }
+}

@@ -1,0 +1,26 @@
+// Homepage 
+@import 'homepage/hero-section';
+@import 'homepage/about-us-section';
+
+// Single (post) template
+@import 'single/single';
+@import 'single/author-short';
+@import 'single/author-long';
+
+// Page template
+@import 'page/page';
+
+// Contact page
+@import 'contact/contact';
+
+// Author page
+@import 'author/author';
+
+// 404
+@import '404/404';
+
+// Category page
+@import 'category/category';
+
+// Search page
+@import 'search/search';

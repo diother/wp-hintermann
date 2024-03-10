@@ -1,0 +1,68 @@
+html.active-search {
+    overflow: hidden;
+    
+    header {
+        top: 0;
+    }
+    .search-window {
+        opacity: 1;
+    }
+}
+.search-window {
+    position: fixed;
+    left: 0;
+    top: 55px;
+    right: 0;
+    bottom: 0;
+    background: $custom-white;
+    transform: translateY(-120%);
+    opacity: 0;
+    transition: 500ms ease-in-out;
+    transition-property: transform;
+    z-index: 4;
+
+    .center-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 4rem $mobileSides;
+    }
+    &.animation {
+        transform: translateY(0);
+        z-index: 5;
+    }
+    @supports ((-webkit-backdrop-filter: blur(40px)) or (backdrop-filter: blur(40px))) {
+        background: rgba(240, 240, 240, .6);
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+    }
+    button {
+        @include center-child;
+    }
+    input {
+        border: none;
+        border-radius: 0;
+        outline: none;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid $homepage-black;
+        @include text-styles(1.25rem, 400);
+
+        &::placeholder {
+            color: $light-bg-grey-text;
+        }
+    }
+    @include tablet {
+        top: 67px;
+
+        .center-container {
+            padding: 6rem $mobileSides;
+            gap: 2rem;
+        }
+    }
+    @include blog {
+        .center-container {
+            max-width: 740px;
+            margin: 0 auto;
+        }
+    }
+}

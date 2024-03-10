@@ -1,0 +1,45 @@
+$article-links: ".single .body a";
+
+.underline, #{$article-links} {
+    position: relative;
+    text-decoration: none;
+    background-image: linear-gradient(currentcolor, currentcolor);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+}
+.underline-hidden {
+    background-size: 0;
+    
+    &:hover {
+        background-size: 100% 1px;
+    }
+}
+a:hover, .underline-hover:hover, span.underline:hover {
+    cursor: pointer;
+
+    &.underline, .underline, a {
+        animation: underline-hover 350ms $transition;
+
+        @keyframes underline-hover {
+            from {
+                background-size: 0 1px;
+            }
+            to {
+                background-size: 100% 1px;
+            }
+        }
+    }
+}
+#{$article-links}:hover {
+    animation: underline-hover 350ms $transition;
+
+    @keyframes underline-hover {
+        from {
+            background-size: 0 1px;
+        }
+        to {
+            background-size: 100% 1px;
+        }
+    }
+}

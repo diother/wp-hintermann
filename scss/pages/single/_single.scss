@@ -1,0 +1,132 @@
+body.single main {
+    padding-top: 4rem;
+    color: $article-black;
+
+    a {
+        color: $article-black;
+    }
+    .title {
+        width: 90%;
+        margin: 0 auto;
+        @include h1(7.6vw);
+    }
+    .thumbnail {
+        padding-top: 4rem;
+    }
+    .img-container {
+        position: relative;
+        width: 100%;
+        padding-top: 100%;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .caption-container {
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 1rem;
+    }
+    .caption {
+        display: block;
+        max-width: 700px;
+    }
+    .body-container {
+        padding-top: 6rem;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .body {
+        padding-top: 4rem;
+
+        p {
+            line-height: 1.75;
+        }
+        h2 {
+            margin-bottom: 34px;
+            
+            &:not(:first-of-type) {
+                margin-top: 88px;
+            }
+        }
+    }
+    .social-container {
+        display: none;
+    }
+    @include tablet {
+        padding-top: 6rem;
+
+        .thumbnail {
+            padding-top: 6rem;
+        }
+        .title {
+            width: 85%;
+            text-align: center;
+            @include h1(5vw);
+        }
+        .caption-container, .body-container {
+            width: 85%;
+        }
+        .img-container {
+            padding-top: 56.25%;
+        }
+        .body p {
+            font-size: 1.125rem;
+        }
+    }
+    @include blog {
+        .title, .body-container {
+            max-width: 680px;
+        }
+    }
+    @include laptop {
+        .title {
+            @include h1(4vw);
+        }
+    }
+    @include desktop {
+        .title {
+            @include h1(3.5rem);
+        }
+        .caption-container {
+            max-width: 1280px;
+        }
+    }
+    @include breakpoint(1380px) {
+        .body-container {
+            padding-top: 6rem;
+            display: grid;
+            grid-template-columns: 1fr 680px 1fr;
+            column-gap: 2rem; 
+            max-width: 1280px;
+        }
+        .body {
+            padding: 0;
+        }
+        .social-container {
+            display: flex;
+            flex-direction: column;
+            justify-self: flex-end;
+            gap: 1rem;
+        }
+    }
+    @include ultra-wide {
+        .img-container {
+            padding-top: 48%;
+        }
+    }
+}
+body.single .articles-section {
+    padding-top: 6rem;
+
+    .title-container {
+        padding-top: 6rem;
+        border-top: $light-bg-border;
+    }
+}

@@ -1,0 +1,97 @@
+.articles-section {
+    overflow-x: hidden;
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    .title-container {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        h1 {
+            @include h1(12vw);
+        }
+    }
+    .subheadline-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .button-container {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        align-self: flex-end;
+
+        .button {
+            padding: 13px;
+            border: 1px solid $homepage-black;
+            border-radius: 50%;
+
+            path {
+                fill: $homepage-black;
+            }
+            &:first-of-type {
+                transform: rotate(180deg);
+            }
+            &.glide__arrow--disabled {
+                border-color: $light-bg-border-color;
+
+                path {
+                    fill: $light-bg-border-color;
+                }
+            }
+        }
+    }
+    .articles-container {
+        width: 90%;
+        margin: 0 auto;
+        overflow: visible;
+    }
+    @include tablet {
+        .title-container {
+            width: 85%;
+
+            h1 {
+                @include h1(9vw);
+            }
+            p {
+                max-width: 600px;
+            }
+        }
+        .articles-container {
+            width: 85%;
+        }
+    }
+    @include laptop {
+        gap: 6rem;
+        
+        .title-container h1 {
+            @include h1(6.5vw);
+        }
+        .subheadline-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    @include desktop {
+        .title-container {
+            max-width: 1280px;
+
+            h1 {
+                max-width: 1050px;
+                @include h1(6rem);
+            }
+            p {
+                font-size: 1.125rem;
+            }
+        }
+        .articles-container {
+            max-width: 1280px;
+        } 
+    }
+}

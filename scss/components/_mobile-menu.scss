@@ -1,0 +1,61 @@
+html.active-menu {
+    @include up-to-laptop {
+        overflow: hidden;
+
+        header {
+            top: 0;
+        }
+        .mobile-menu {
+            opacity: 1;
+        }
+    }
+}
+.mobile-menu {
+    position: fixed;
+    left: 0;
+    top: 55px;
+    right: 0;
+    bottom: 0;
+    background: $custom-white;
+    transform: translateY(-120%);
+    opacity: 0;
+    transition: 500ms ease-in-out;
+    transition-property: transform;
+    display: flex;
+    flex-direction: column;
+    z-index: 4;
+
+    &.animation {
+        transform: translateY(0);
+        z-index: 5;
+    }
+    @supports ((-webkit-backdrop-filter: blur(40px)) or (backdrop-filter: blur(40px))) {
+        background: rgba(240, 240, 240, .6);
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+    }
+    a {
+        min-height: 60px;
+        padding: 0 $mobileSides;
+        @include center-child-vertically;
+        justify-content: space-between;
+        border-bottom: 1px solid $homepage-black;
+
+        &:after{
+            border-color: $homepage-black;
+            border-style: solid;
+            border-width: 2px 2px 0 0;
+            content: "";
+            display: block;
+            height: 10px;
+            transform: rotate(45deg);
+            width: 10px;
+        }
+    }
+    @include tablet {
+        top: 67px;
+    }
+    @include laptop {
+        display: none;
+    }
+}

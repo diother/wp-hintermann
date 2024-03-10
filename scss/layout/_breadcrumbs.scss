@@ -1,0 +1,28 @@
+.breadcrumbs {
+    height: 55px;
+    border-bottom: $light-bg-border;
+    @include center-child-vertically;
+    
+    .center-container {
+        width: 100%;
+        display: flex;
+        padding: 0 $mobileSides;
+        gap: 10px;
+        overflow: hidden;
+    }
+    a, span {
+        flex-shrink: 0;
+    }
+    .title, .separator {
+        color: $light-bg-grey-text;
+    }
+    @include tablet {
+        height: 67px;
+    }
+    @include desktop {
+        .center-container {
+            max-width: 1320px;
+            margin: 0 auto;
+        }
+    }
+}

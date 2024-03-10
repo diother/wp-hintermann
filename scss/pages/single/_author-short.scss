@@ -1,0 +1,36 @@
+body.single .author-short {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .avatar {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+    }
+    .name span {
+        font-weight: 700;
+    }
+    .function {
+        font-style: italic;
+        max-width: 300px;
+    }
+    .learn-more {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        width: fit-content;
+        font-weight: 700;
+
+        &:after{
+            border-color: $homepage-black;
+            border-style: solid;
+            border-width: 2px 2px 0 0;
+            content: "";
+            display: block;
+            height: 10px;
+            transform: translateY(-25%) rotate(135deg);
+            width: 10px;
+        }
+    }
+}

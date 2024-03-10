@@ -1,0 +1,62 @@
+// Screen breakpoints
+@mixin breakpoint($breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: 640px) {
+        @content;
+    }
+}
+@mixin blog {
+    @media (min-width: 680px) {
+        @content;
+    }
+}
+@mixin laptop {
+    @media (min-width: 960px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
+@mixin ultra-wide {
+    @media (min-width: 1520px) {
+        @content;
+    }
+}
+@mixin up-to-laptop {
+    @media (max-width: 959px) {
+        @content;
+    }
+}
+
+// Center mixins
+@mixin center-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin center-child-vertically {
+    display: flex;
+    align-items: center;
+}
+@mixin center-child-horizontally {
+    display: flex;
+    justify-content: center;
+}
+
+// Typography mixins
+@mixin text-styles($font-size, $font-weight: 400, $line-height: 1, $letter-spacing-percent: 0) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    letter-spacing: calc($font-size * $letter-spacing-percent / 100);
+}
+@mixin h1($font-size) {
+    @include text-styles($font-size, 700, 1.04, -3);
+}
